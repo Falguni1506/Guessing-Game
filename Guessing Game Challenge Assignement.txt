@@ -1,0 +1,39 @@
+Guessing Game Challenge Assignment:
+
+import random
+
+number = random.randint(1, 100)
+
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+print("Try to guess the number. After each guess, you'll get feedback:")
+
+guesses = [0]  
+
+while True:
+    try:
+        guess = int(input("Enter your guess: "))
+    except ValueError:
+        print("Please enter a valid integer.")
+        continue
+    
+    if guess < 1 or guess > 100:
+        print("OUT OF BOUNDS")
+        continue
+
+    guesses.append(guess)
+
+    if guess == number:
+        print(f"🎉 Congratulations! You guessed the number {number} in {len(guesses)-1} tries!")
+        break
+
+    if guesses[-2] == 0:  # first guess (placeholder is 0)
+        if abs(number - guess) <= 10:
+            print("WARM!")
+        else:
+            print("COLD!")
+    else:
+        if abs(number - guess) < abs(number - guesses[-2]):
+            print("WARMER!")
+        else:
+            print("COLDER!")

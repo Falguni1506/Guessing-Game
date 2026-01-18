@@ -1,0 +1,50 @@
+1️. Print words that start with 's'
+
+st = 'Print only the words that start with s in this sentence'
+
+for word in st.split():
+    if word[0].lower() == 's':
+        print(word)
+        
+        
+2. Print all even numbers from 0 to 10 using range()
+
+for num in range(0, 11):
+    if num % 2 == 0:
+        print(num)
+        
+        
+3. List comprehension: numbers between 1 and 50 divisible by 3
+
+div_by_3 = [num for num in range(1, 51) if num % 3 == 0]
+print(div_by_3)
+
+
+4. Print "even!" for words with even length
+
+st = 'Print every word in this sentence that has an even number of letters'
+
+for word in st.split():
+    if len(word) % 2 == 0:
+        print(f"{word} -> even!")
+        
+
+5️. FizzBuzz from 1 to 100
+
+for num in range(1, 101):
+    if num % 3 == 0 and num % 5 == 0:
+        print("FizzBuzz")
+    elif num % 3 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    else:
+        print(num)
+
+
+6️. List comprehension: first letters of every word
+
+st = 'Create a list of the first letters of every word in this string'
+
+first_letters = [word[0] for word in st.split()]
+print(first_letters)
